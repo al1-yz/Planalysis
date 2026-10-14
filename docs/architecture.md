@@ -36,7 +36,11 @@ context. No dependency-injection framework is used.
 ## State
 
 - Persistent financial data: database, accessed through repositories. It is the source of truth.
-- Derived values (totals, balances, invoices, net worth): computed by domain functions, not stored.
+- Derived values (totals, balances, net worth): computed by domain functions, not stored.
+- Invoices: assigned by domain rules from purchases and card settings. Whether they are also
+  persisted is provisional and will be decided with the credit card feature.
+- Transfers: how a transfer is represented in storage is provisional and will be decided with the
+  transactions feature.
 - UI state: local React state first. Zustand only for genuinely shared UI state (e.g. selected
   month), introduced when needed.
 
