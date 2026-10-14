@@ -1,0 +1,10 @@
+{
+  "ready": false,
+  "schemaVersion": null,
+  "appVersion": "0.1.0",
+  "path": "/data/planalysis.db",
+  "error": {
+    "code": "database_too_new",
+    "message": "the database uses schema version 99, but this build supports up to 1"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "3f2b8c1e-5d4a-4e6f-9a1b-0c7d8e9f1a2b",
+  "name": "Conta Corrente",
+  "nameKey": "conta corrente",
+  "type": "checking",
+  "openingBalance": 150075,
+  "openingDate": "2026-01-15",
+  "archivedAt": null,
+  "createdAt": "2026-10-13T12:00:00.000Z",
+  "updatedAt": "2026-10-13T12:30:00.000Z"
+}

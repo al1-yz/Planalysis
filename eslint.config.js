@@ -7,7 +7,14 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default defineConfig([
-  globalIgnores(["dist", "coverage", "playwright-report", "test-results"]),
+  globalIgnores([
+    "dist",
+    "coverage",
+    "playwright-report",
+    "test-results",
+    "src-tauri/target",
+    "src-tauri/gen",
+  ]),
   {
     files: ["**/*.{ts,tsx}"],
     extends: [
@@ -40,15 +47,7 @@ export default defineConfig([
         {
           patterns: [
             {
-              group: [
-                "react",
-                "react-*",
-                "react/*",
-                "radix-ui",
-                "lucide-react",
-                "dexie",
-                "dexie-*",
-              ],
+              group: ["react", "react-*", "react/*", "radix-ui", "lucide-react", "@tauri-apps/*"],
               message: "The domain layer must not depend on UI or persistence libraries.",
             },
             {
@@ -75,12 +74,29 @@ export default defineConfig([
         {
           patterns: [
             {
-              group: ["react", "react-*", "react/*", "dexie", "dexie-*"],
-              message: "Use cases must not depend on React or Dexie.",
+              group: ["react", "react-*", "react/*", "@tauri-apps/*"],
+              message: "Use cases must not depend on React or the Tauri runtime.",
             },
             {
               group: ["@/app/*", "@/features/*", "@/components/*", "@/infrastructure/*"],
               message: "Use cases must depend on domain types and repository interfaces only.",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    // Infrastructure implements domain interfaces; it never reaches into UI or use cases.
+    files: ["src/infrastructure/**/*.ts"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["@/app/*", "@/features/*", "@/components/*", "@/application/*"],
+              message: "Infrastructure may depend on the domain layer only.",
             },
           ],
         },

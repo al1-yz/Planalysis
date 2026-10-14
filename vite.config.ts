@@ -5,6 +5,14 @@ import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  // Keeps Vite from hiding Rust compiler errors when run through the Tauri CLI.
+  clearScreen: false,
+  server: {
+    // Must match `devUrl` in src-tauri/tauri.conf.json.
+    port: 5173,
+    strictPort: true,
+    watch: { ignored: ["**/src-tauri/**"] },
+  },
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

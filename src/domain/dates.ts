@@ -57,16 +57,21 @@ export function daysInMonth(period: YearMonth): number {
   return lengthOfMonth(year, month);
 }
 
+/** Validates a day-of-month setting (closing day, due day): an integer from 1 to 31. */
+export function dayOfMonthSetting(day: number): number {
+  if (!Number.isInteger(day) || day < 1 || day > 31) {
+    throw new RangeError(`Day of month must be an integer from 1 to 31, received ${day}.`);
+  }
+  return day;
+}
+
 /**
  * Applies a day-of-month setting (1–31, e.g. a closing or due day) to a month, clamping to the
  * month's last day when it does not exist (31 in April → 30). Throws `RangeError` for a setting
  * outside 1–31.
  */
 export function clampDayToMonth(period: YearMonth, day: number): number {
-  if (!Number.isInteger(day) || day < 1 || day > 31) {
-    throw new RangeError(`Day of month must be an integer from 1 to 31, received ${day}.`);
-  }
-  return Math.min(day, daysInMonth(period));
+  return Math.min(dayOfMonthSetting(day), daysInMonth(period));
 }
 
 /** The accounting period that contains the given date. */

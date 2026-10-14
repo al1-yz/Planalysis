@@ -1,0 +1,4 @@
+{
+  "code": "duplicate_name",
+  "message": "UNIQUE constraint failed: accounts.name_key"
+}

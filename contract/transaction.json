@@ -1,0 +1,12 @@
+{
+  "id": "01234567-89ab-4cde-8f01-23456789abcd",
+  "accountId": "3f2b8c1e-5d4a-4e6f-9a1b-0c7d8e9f1a2b",
+  "cardId": null,
+  "categoryId": "aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee",
+  "transferId": null,
+  "date": "2026-10-13",
+  "amount": -4590,
+  "description": "Mercado",
+  "createdAt": "2026-10-13T12:00:00.000Z",
+  "updatedAt": "2026-10-13T12:30:00.000Z"
+}

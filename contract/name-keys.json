@@ -1,0 +1,45 @@
+{
+  "description": "Inputs and the name key both sides must agree on. Shared by TypeScript and Rust tests.",
+  "cases": [
+    {
+      "input": "A\u00e7\u00e3o",
+      "key": "a\u00e7\u00e3o"
+    },
+    {
+      "input": "A\u00c7\u00c3O",
+      "key": "a\u00e7\u00e3o"
+    },
+    {
+      "input": "  Conta   Corrente ",
+      "key": "conta corrente"
+    },
+    {
+      "input": "Nubank",
+      "key": "nubank"
+    },
+    {
+      "input": "SA\u00daDE",
+      "key": "sa\u00fade"
+    },
+    {
+      "input": "Cart\u00e3o   NUBANK",
+      "key": "cart\u00e3o nubank"
+    },
+    {
+      "input": "Reserva\u00a0\u00a0de\u3000emerg\u00eancia",
+      "key": "reserva de emerg\u00eancia"
+    },
+    {
+      "input": "Ac\u0327a\u0303o",
+      "key": "a\u00e7\u00e3o"
+    },
+    {
+      "input": "\u039f\u0394\u03a5\u03a3\u03a3\u0395\u03a5\u03a3",
+      "key": "\u03bf\u03b4\u03c5\u03c3\u03c3\u03b5\u03c5\u03c2"
+    },
+    {
+      "input": "\u0130stanbul",
+      "key": "i\u0307stanbul"
+    }
+  ]
+}

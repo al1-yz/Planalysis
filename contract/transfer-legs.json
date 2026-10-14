@@ -1,0 +1,26 @@
+[
+  {
+    "id": "01234567-89ab-4cde-8f01-23456789abcd",
+    "accountId": "3f2b8c1e-5d4a-4e6f-9a1b-0c7d8e9f1a2b",
+    "cardId": null,
+    "categoryId": null,
+    "transferId": "0f0f0f0f-1e1e-4d2d-8c3c-4b4b4b4b4b4b",
+    "date": "2026-10-13",
+    "amount": -25000,
+    "description": "Reserva",
+    "createdAt": "2026-10-13T12:00:00.000Z",
+    "updatedAt": "2026-10-13T12:30:00.000Z"
+  },
+  {
+    "id": "fedcba98-7654-4321-8fed-cba987654321",
+    "accountId": "9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d",
+    "cardId": null,
+    "categoryId": null,
+    "transferId": "0f0f0f0f-1e1e-4d2d-8c3c-4b4b4b4b4b4b",
+    "date": "2026-10-13",
+    "amount": 25000,
+    "description": "Reserva",
+    "createdAt": "2026-10-13T12:00:00.000Z",
+    "updatedAt": "2026-10-13T12:30:00.000Z"
+  }
+]

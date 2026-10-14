@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 
+import { DatabaseGate } from "./app/database-gate";
 import { routes } from "./app/routes";
 import "./styles/index.css";
 
@@ -15,6 +16,8 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <DatabaseGate>
+      <RouterProvider router={router} />
+    </DatabaseGate>
   </StrictMode>,
 );
